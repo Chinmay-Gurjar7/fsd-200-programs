@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feature Cards Section</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8f9ff;padding:5rem 1rem;}
+    .header{text-align:center;margin-bottom:4rem;}
+    .header .tag{display:inline-block;background:#ede9fe;color:#6c63ff;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:.4rem 1rem;border-radius:50px;margin-bottom:1rem;}
+    .header h2{font-size:2.8rem;font-weight:800;color:#0f0f1a;margin-bottom:.8rem;}
+    .header h2 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .header p{color:#888;max-width:500px;margin:0 auto;line-height:1.7;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto 4rem;}
+    .card{background:#fff;border-radius:20px;padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .3s;border:1px solid transparent;position:relative;overflow:hidden;}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c1),var(--c2));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+    .card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.1);border-color:rgba(108,99,255,.1);}
+    .card:hover::before{transform:scaleX(1);}
+    .icon-wrap{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.2rem;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 8px 20px rgba(0,0,0,.15);}
+    .card h3{font-size:1.1rem;font-weight:700;color:#0f0f1a;margin-bottom:.6rem;}
+    .card p{color:#888;font-size:.9rem;line-height:1.6;margin-bottom:1.2rem;}
+    .card-link{color:var(--c1);font-size:.85rem;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:.3rem;transition:gap .3s;}
+    .card-link:hover{gap:.6rem;}
+    .cta-section{text-align:center;background:linear-gradient(135deg,#0f0c29,#302b63);border-radius:24px;padding:4rem 2rem;max-width:1100px;margin:0 auto;position:relative;overflow:hidden;}
+    .cta-section::before{content:'';position:absolute;width:400px;height:400px;background:radial-gradient(circle,rgba(108,99,255,.3),transparent);top:-200px;right:-100px;}
+    .cta-section h2{font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:1rem;position:relative;z-index:1;}
+    .cta-section p{color:rgba(255,255,255,.6);margin-bottom:2rem;position:relative;z-index:1;}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+    .cta-btn1{background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;padding:.9rem 2.2rem;border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s;box-shadow:0 8px 25px rgba(108,99,255,.4);}
+    .cta-btn1:hover{transform:translateY(-3px);}
+    .cta-btn2{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;padding:.9rem 2.2rem;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s;}
+    .cta-btn2:hover{background:rgba(255,255,255,.2);}
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="tag">⚡ Features</div>
+  <h2>Everything You Need to <span>Succeed</span></h2>
+  <p>Powerful features designed to help your team move faster and build better products.</p>
+</div>
+
+<div class="grid">
+  <div class="card" style="--c1:#6c63ff;--c2:#8b5cf6;">
+    <div class="icon-wrap">⚡</div>
+    <h3>Lightning Fast</h3>
+    <p>Optimized for performance with sub-second load times. Your users will never wait again.</p>
+    <a href="#" class="card-link">Learn more →</a>
+  </div>
+  <div class="card" style="--c1:#f093fb;--c2:#f5576c;">
+    <div class="icon-wrap">🔒</div>
+    <h3>Enterprise Security</h3>
+    <p>Bank-grade encryption and SOC 2 compliance. Your data is always safe and protected.</p>
+    <a href="#" class="card-link">Learn more →</a>
+  </div>
+  <div class="card" style="--c1:#43e97b;--c2:#38f9d7;">
+    <div class="icon-wrap">📊</div>
+    <h3>Advanced Analytics</h3>
+    <p>Real-time insights and beautiful dashboards. Make data-driven decisions with confidence.</p>
+    <a href="#" class="card-link">Learn more →</a>
+  </div>
+  <div class="card" style="--c1:#4facfe;--c2:#00f2fe;">
+    <div class="icon-wrap">🤝</div>
+    <h3>Team Collaboration</h3>
+    <p>Work together seamlessly with real-time editing, comments, and version history.</p>
+    <a href="#" class="card-link">Learn more →</a>
+  </div>
+  <div class="card" style="--c1:#ff9f43;--c2:#ee5a24;">
+    <div class="icon-wrap">🔌</div>
+    <h3>100+ Integrations</h3>
+    <p>Connect with your favorite tools. Slack, GitHub, Jira, and many more out of the box.</p>
+    <a href="#" class="card-link">Learn more →</a>
+  </div>
+  <div class="card" style="--c1:#a29bfe;--c2:#fd79a8;">
+    <div class="icon-wrap">🌍</div>
+    <h3>Global CDN</h3>
+    <p>Deployed across 50+ regions worldwide. Deliver content at the speed of light, everywhere.</p>
+    <a href="#" class="card-link">Learn more →</a>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Ready to Get Started?</h2>
+  <p>Join 50,000+ teams already using our platform to build amazing products.</p>
+  <div class="cta-btns">
+    <a href="#" class="cta-btn1">Start Free Trial →</a>
+    <a href="#" class="cta-btn2">Schedule Demo</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Post — The Future of Web Design</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Georgia',serif;background:#fff;color:#1a1a2e;line-height:1.8;}
+    nav{padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0f0f0;position:sticky;top:0;background:#fff;z-index:10;}
+    .nav-logo{font-family:'Segoe UI',sans-serif;font-size:1.3rem;font-weight:800;background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;}
+    .nav-links a{font-family:'Segoe UI',sans-serif;color:#666;text-decoration:none;font-size:.9rem;transition:color .3s;}
+    .nav-links a:hover{color:#6c63ff;}
+    .hero-img{width:100%;height:420px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative;overflow:hidden;}
+    .hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.3));}
+    .container{max-width:760px;margin:0 auto;padding:3rem 1.5rem;}
+    .meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+    .category{background:#ede9fe;color:#6c63ff;font-family:'Segoe UI',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.3rem .8rem;border-radius:50px;}
+    .meta-info{font-family:'Segoe UI',sans-serif;color:#999;font-size:.85rem;display:flex;gap:1rem;flex-wrap:wrap;}
+    h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.25;margin-bottom:1.5rem;color:#0f0f1a;}
+    .author-row{display:flex;align-items:center;gap:1rem;padding:1.2rem 0;border-top:1px solid #f0f0f0;border-bottom:1px solid #f0f0f0;margin-bottom:2rem;}
+    .author-av{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#6c63ff,#ff6584);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:'Segoe UI',sans-serif;}
+    .author-name{font-family:'Segoe UI',sans-serif;font-weight:700;color:#1a1a2e;font-size:.95rem;}
+    .author-title{font-family:'Segoe UI',sans-serif;color:#999;font-size:.82rem;}
+    .share-btns{margin-left:auto;display:flex;gap:.5rem;}
+    .share-btn{font-family:'Segoe UI',sans-serif;font-size:.8rem;padding:.4rem .9rem;border-radius:50px;border:1px solid #e0e0e0;cursor:pointer;transition:all .3s;background:#fff;color:#666;}
+    .share-btn:hover{background:#6c63ff;color:#fff;border-color:#6c63ff;}
+    p{margin-bottom:1.5rem;color:#333;font-size:1.05rem;}
+    h2{font-size:1.5rem;font-weight:700;margin:2.5rem 0 1rem;color:#0f0f1a;}
+    h3{font-size:1.2rem;font-weight:700;margin:2rem 0 .8rem;color:#0f0f1a;}
+    blockquote{border-left:4px solid #6c63ff;padding:1rem 1.5rem;background:#f8f7ff;border-radius:0 12px 12px 0;margin:2rem 0;font-style:italic;color:#555;}
+    blockquote cite{display:block;font-family:'Segoe UI',sans-serif;font-style:normal;font-size:.85rem;color:#999;margin-top:.5rem;}
+    .highlight-box{background:linear-gradient(135deg,#ede9fe,#fce7f3);border-radius:16px;padding:1.5rem;margin:2rem 0;}
+    .highlight-box h4{font-family:'Segoe UI',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6c63ff;margin-bottom:.5rem;}
+    ul,ol{padding-left:1.5rem;margin-bottom:1.5rem;}
+    li{margin-bottom:.5rem;color:#333;font-size:1.05rem;}
+    .tags{display:flex;gap:.5rem;flex-wrap:wrap;margin:2rem 0;padding-top:2rem;border-top:1px solid #f0f0f0;}
+    .tag{font-family:'Segoe UI',sans-serif;font-size:.8rem;background:#f5f5f5;color:#666;padding:.3rem .8rem;border-radius:50px;transition:all .3s;cursor:pointer;}
+    .tag:hover{background:#6c63ff;color:#fff;}
+    .related{background:#f8f9ff;padding:3rem 1.5rem;}
+    .related-inner{max-width:760px;margin:0 auto;}
+    .related h3{font-family:'Segoe UI',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:1.5rem;color:#1a1a2e;}
+    .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;}
+    .related-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 15px rgba(0,0,0,.06);transition:all .3s;}
+    .related-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.1);}
+    .related-img{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+    .related-body{padding:1rem;}
+    .related-body h4{font-family:'Segoe UI',sans-serif;font-size:.9rem;font-weight:700;color:#1a1a2e;margin-bottom:.3rem;}
+    .related-body p{font-family:'Segoe UI',sans-serif;font-size:.8rem;color:#999;}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">DevBlog</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Articles</a></li>
+    <li><a href="#">Tutorials</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+
+<div class="hero-img">🎨</div>
+
+<div class="container">
+  <div class="meta">
+    <span class="category">Design</span>
+    <div class="meta-info">
+      <span>📅 December 15, 2024</span>
+      <span>⏱ 8 min read</span>
+      <span>👁 12.4k views</span>
+    </div>
+  </div>
+
+  <h1>The Future of Web Design: Trends Shaping 2025 and Beyond</h1>
+
+  <div class="author-row">
+    <div class="author-av">AM</div>
+    <div>
+      <div class="author-name">Alex Morgan</div>
+      <div class="author-title">Senior UI/UX Designer</div>
+    </div>
+    <div class="share-btns">
+      <button class="share-btn">🔗 Share</button>
+      <button class="share-btn">🔖 Save</button>
+    </div>
+  </div>
+
+  <p>The web design landscape is evolving at an unprecedented pace. As we move into 2025, designers and developers are embracing new paradigms that blend aesthetics with functionality in ways we've never seen before.</p>
+
+  <h2>1. Glassmorphism Grows Up</h2>
+  <p>What started as a trendy aesthetic has matured into a sophisticated design language. Glassmorphism — with its frosted glass effects, subtle borders, and layered transparency — is now being used thoughtfully to create depth and hierarchy in interfaces.</p>
+
+  <blockquote>
+    "Design is not just what it looks like and feels like. Design is how it works."
+    <cite>— Steve Jobs</cite>
+  </blockquote>
+
+  <h2>2. AI-Assisted Design Workflows</h2>
+  <p>Artificial intelligence is no longer a buzzword in design — it's a practical tool. From generating layout suggestions to automating repetitive tasks, AI is freeing designers to focus on what matters most: creative problem-solving.</p>
+
+  <div class="highlight-box">
+    <h4>💡 Key Insight</h4>
+    <p style="margin:0;font-family:'Segoe UI',sans-serif;font-size:.95rem;">Designers who embrace AI tools are reporting up to 40% faster iteration cycles, allowing more time for user research and strategic thinking.</p>
+  </div>
+
+  <h2>3. Motion Design as Communication</h2>
+  <p>Micro-interactions and purposeful animations are becoming essential communication tools. When done right, motion design guides users, provides feedback, and creates emotional connections with products.</p>
+
+  <h3>Key principles of effective motion design:</h3>
+  <ul>
+    <li>Animations should serve a purpose, not just look cool</li>
+    <li>Keep transitions under 300ms for UI feedback</li>
+    <li>Use easing functions that feel natural and physical</li>
+    <li>Respect user preferences for reduced motion</li>
+  </ul>
+
+  <h2>4. Variable Fonts Revolution</h2>
+  <p>Variable fonts are transforming typography on the web. A single font file can now contain an entire type family, enabling fluid typographic experiences that respond to screen size, user preferences, and even scroll position.</p>
+
+  <div class="tags">
+    <span class="tag">#WebDesign</span>
+    <span class="tag">#UIDesign</span>
+    <span class="tag">#CSS</span>
+    <span class="tag">#Trends2025</span>
+    <span class="tag">#Frontend</span>
+    <span class="tag">#Typography</span>
+  </div>
+</div>
+
+<div class="related">
+  <div class="related-inner">
+    <h3>Related Articles</h3>
+    <div class="related-grid">
+      <div class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#e0e7ff,#c7d2fe);">🎯</div><div class="related-body"><h4>CSS Grid: The Complete Guide</h4><p>Master modern layouts with CSS Grid</p></div></div>
+      <div class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0);">⚡</div><div class="related-body"><h4>Performance Optimization Tips</h4><p>Speed up your website in 10 steps</p></div></div>
+      <div class="related-card"><div class="related-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9);">🎨</div><div class="related-body"><h4>Color Theory for Developers</h4><p>Build better color palettes</p></div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

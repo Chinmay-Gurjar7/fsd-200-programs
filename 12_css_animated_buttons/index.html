@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Animated Buttons</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#0d0d1a;color:#fff;padding:4rem 1rem;}
+    h1{text-align:center;font-size:2.2rem;font-weight:800;margin-bottom:.5rem;}
+    h1 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .subtitle{text-align:center;color:#666;margin-bottom:4rem;}
+    .section{max-width:900px;margin:0 auto 3rem;}
+    .section-label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#444;margin-bottom:1.5rem;padding-left:.5rem;border-left:3px solid #6c63ff;}
+    .btn-row{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;}
+    button{cursor:pointer;font-family:'Segoe UI',sans-serif;font-size:.9rem;font-weight:600;border:none;outline:none;}
+
+    /* Gradient buttons */
+    .btn-grad1{background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;padding:.8rem 2rem;border-radius:50px;transition:all .3s;box-shadow:0 4px 15px rgba(108,99,255,.4);}
+    .btn-grad1:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(108,99,255,.6);}
+    .btn-grad2{background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;padding:.8rem 2rem;border-radius:50px;transition:all .3s;box-shadow:0 4px 15px rgba(245,87,108,.4);}
+    .btn-grad2:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(245,87,108,.6);}
+    .btn-grad3{background:linear-gradient(135deg,#43e97b,#38f9d7);color:#0a2e1a;padding:.8rem 2rem;border-radius:50px;transition:all .3s;box-shadow:0 4px 15px rgba(67,233,123,.4);}
+    .btn-grad3:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(67,233,123,.6);}
+
+    /* Outline buttons */
+    .btn-out1{background:transparent;border:2px solid #6c63ff;color:#6c63ff;padding:.75rem 2rem;border-radius:50px;transition:all .3s;}
+    .btn-out1:hover{background:#6c63ff;color:#fff;box-shadow:0 8px 25px rgba(108,99,255,.4);}
+    .btn-out2{background:transparent;border:2px solid #ff6584;color:#ff6584;padding:.75rem 2rem;border-radius:50px;transition:all .3s;}
+    .btn-out2:hover{background:#ff6584;color:#fff;}
+    .btn-out3{background:transparent;border:2px solid #43e97b;color:#43e97b;padding:.75rem 2rem;border-radius:50px;transition:all .3s;}
+    .btn-out3:hover{background:#43e97b;color:#0a2e1a;}
+
+    /* Glow buttons */
+    .btn-glow1{background:#6c63ff;color:#fff;padding:.8rem 2rem;border-radius:12px;transition:all .3s;animation:glowPulse1 2s ease-in-out infinite;}
+    @keyframes glowPulse1{0%,100%{box-shadow:0 0 10px rgba(108,99,255,.5);}50%{box-shadow:0 0 30px rgba(108,99,255,.9),0 0 60px rgba(108,99,255,.4);}}
+    .btn-glow2{background:#ff6584;color:#fff;padding:.8rem 2rem;border-radius:12px;transition:all .3s;animation:glowPulse2 2s ease-in-out infinite;}
+    @keyframes glowPulse2{0%,100%{box-shadow:0 0 10px rgba(255,101,132,.5);}50%{box-shadow:0 0 30px rgba(255,101,132,.9),0 0 60px rgba(255,101,132,.4);}}
+
+    /* Slide fill buttons */
+    .btn-slide{position:relative;background:transparent;border:2px solid #6c63ff;color:#6c63ff;padding:.8rem 2rem;border-radius:8px;overflow:hidden;transition:color .3s;}
+    .btn-slide::before{content:'';position:absolute;inset:0;background:#6c63ff;transform:translateX(-100%);transition:transform .3s ease;}
+    .btn-slide:hover::before{transform:translateX(0);}
+    .btn-slide:hover{color:#fff;}
+    .btn-slide span{position:relative;z-index:1;}
+    .btn-slide2{position:relative;background:transparent;border:2px solid #ff6584;color:#ff6584;padding:.8rem 2rem;border-radius:8px;overflow:hidden;transition:color .3s;}
+    .btn-slide2::before{content:'';position:absolute;inset:0;background:#ff6584;transform:translateY(100%);transition:transform .3s ease;}
+    .btn-slide2:hover::before{transform:translateY(0);}
+    .btn-slide2:hover{color:#fff;}
+    .btn-slide2 span{position:relative;z-index:1;}
+
+    /* 3D buttons */
+    .btn-3d{background:#6c63ff;color:#fff;padding:.8rem 2rem;border-radius:8px;box-shadow:0 6px 0 #4a42cc;transition:all .15s;}
+    .btn-3d:hover{transform:translateY(3px);box-shadow:0 3px 0 #4a42cc;}
+    .btn-3d:active{transform:translateY(6px);box-shadow:0 0 0 #4a42cc;}
+    .btn-3d2{background:#ff6584;color:#fff;padding:.8rem 2rem;border-radius:8px;box-shadow:0 6px 0 #cc3355;transition:all .15s;}
+    .btn-3d2:hover{transform:translateY(3px);box-shadow:0 3px 0 #cc3355;}
+    .btn-3d2:active{transform:translateY(6px);box-shadow:0 0 0 #cc3355;}
+
+    /* Icon buttons */
+    .btn-icon{display:inline-flex;align-items:center;gap:.6rem;background:rgba(108,99,255,.15);border:1px solid rgba(108,99,255,.3);color:#a78bfa;padding:.75rem 1.5rem;border-radius:12px;transition:all .3s;}
+    .btn-icon:hover{background:#6c63ff;color:#fff;border-color:#6c63ff;transform:translateY(-2px);}
+    .btn-icon2{display:inline-flex;align-items:center;gap:.6rem;background:rgba(255,101,132,.15);border:1px solid rgba(255,101,132,.3);color:#ff6584;padding:.75rem 1.5rem;border-radius:12px;transition:all .3s;}
+    .btn-icon2:hover{background:#ff6584;color:#fff;border-color:#ff6584;transform:translateY(-2px);}
+
+    /* Loading button */
+    .btn-loading{background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;padding:.8rem 2rem;border-radius:50px;display:inline-flex;align-items:center;gap:.6rem;}
+    .spinner-sm{width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+
+    /* Shake button */
+    .btn-shake{background:linear-gradient(135deg,#ff9f43,#ee5a24);color:#fff;padding:.8rem 2rem;border-radius:50px;transition:all .3s;}
+    .btn-shake:hover{animation:shake .4s ease-in-out;}
+    @keyframes shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-5px);}40%{transform:translateX(5px);}60%{transform:translateX(-3px);}80%{transform:translateX(3px);}}
+  </style>
+</head>
+<body>
+  <h1>CSS <span>Animated Buttons</span></h1>
+  <p class="subtitle">Hover over each button to see the animation</p>
+
+  <div class="section">
+    <div class="section-label">Gradient Buttons</div>
+    <div class="btn-row">
+      <button class="btn-grad1">Primary</button>
+      <button class="btn-grad2">Danger</button>
+      <button class="btn-grad3">Success</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Outline Buttons</div>
+    <div class="btn-row">
+      <button class="btn-out1">Outline Purple</button>
+      <button class="btn-out2">Outline Pink</button>
+      <button class="btn-out3">Outline Green</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Glow Pulse Buttons</div>
+    <div class="btn-row">
+      <button class="btn-glow1">Glow Purple</button>
+      <button class="btn-glow2">Glow Pink</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Slide Fill Buttons</div>
+    <div class="btn-row">
+      <button class="btn-slide"><span>Slide Right →</span></button>
+      <button class="btn-slide2"><span>Slide Up ↑</span></button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">3D Press Buttons</div>
+    <div class="btn-row">
+      <button class="btn-3d">Press Me</button>
+      <button class="btn-3d2">Click Me</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Icon Buttons</div>
+    <div class="btn-row">
+      <button class="btn-icon">🚀 Launch</button>
+      <button class="btn-icon2">❤️ Like</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Special Buttons</div>
+    <div class="btn-row">
+      <button class="btn-loading"><div class="spinner-sm"></div> Loading...</button>
+      <button class="btn-shake">🔔 Shake Me</button>
+    </div>
+  </div>
+</body>
+</html>

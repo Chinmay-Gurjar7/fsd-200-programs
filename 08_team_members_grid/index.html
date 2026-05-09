@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Team</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8f9ff;padding:5rem 1rem;}
+    .header{text-align:center;margin-bottom:4rem;}
+    .header .tag{display:inline-block;background:#ede9fe;color:#6c63ff;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:.4rem 1rem;border-radius:50px;margin-bottom:1rem;}
+    .header h2{font-size:2.8rem;font-weight:800;color:#1a1a2e;margin-bottom:.8rem;}
+    .header h2 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .header p{color:#888;max-width:500px;margin:0 auto;line-height:1.7;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;max-width:1100px;margin:0 auto;}
+    .card{background:#fff;border-radius:24px;padding:2.5rem 1.5rem;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:all .3s;position:relative;overflow:hidden;}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c2));}
+    .card:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(0,0,0,.12);}
+    .avatar-wrap{position:relative;display:inline-block;margin-bottom:1.2rem;}
+    .avatar{width:90px;height:90px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:800;color:#fff;margin:0 auto;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 8px 25px rgba(0,0,0,.15);}
+    .status-dot{position:absolute;bottom:4px;right:4px;width:16px;height:16px;background:#43e97b;border-radius:50%;border:3px solid #fff;}
+    .name{font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:.2rem;}
+    .role{font-size:.85rem;color:#6c63ff;font-weight:600;margin-bottom:.8rem;}
+    .bio{font-size:.85rem;color:#888;line-height:1.6;margin-bottom:1.2rem;}
+    .socials{display:flex;justify-content:center;gap:.6rem;}
+    .social-btn{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:.9rem;cursor:pointer;transition:all .3s;text-decoration:none;}
+    .social-btn:hover{transform:translateY(-3px);}
+    .s-li{background:#e8f4fd;color:#0077b5;}
+    .s-li:hover{background:#0077b5;color:#fff;}
+    .s-tw{background:#e8f5fe;color:#1da1f2;}
+    .s-tw:hover{background:#1da1f2;color:#fff;}
+    .s-gh{background:#f0f0f0;color:#333;}
+    .s-gh:hover{background:#333;color:#fff;}
+    .s-dr{background:#fce4ec;color:#ea4c89;}
+    .s-dr:hover{background:#ea4c89;color:#fff;}
+    .divider{width:40px;height:3px;background:linear-gradient(90deg,var(--c1),var(--c2));border-radius:2px;margin:.8rem auto;}
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="tag">👥 Our Team</div>
+  <h2>Meet the <span>Brilliant Minds</span></h2>
+  <p>A diverse team of passionate professionals dedicated to building exceptional digital experiences.</p>
+</div>
+
+<div class="grid">
+  <div class="card" style="--c1:#6c63ff;--c2:#8b5cf6;">
+    <div class="avatar-wrap"><div class="avatar">AM</div><div class="status-dot"></div></div>
+    <div class="name">Alex Morgan</div>
+    <div class="role">Lead Developer</div>
+    <div class="divider"></div>
+    <p class="bio">Full-stack wizard with 8 years of experience. Loves clean code and scalable architecture.</p>
+    <div class="socials">
+      <a class="social-btn s-li" href="#">in</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+      <a class="social-btn s-gh" href="#">⌥</a>
+    </div>
+  </div>
+
+  <div class="card" style="--c1:#f093fb;--c2:#f5576c;">
+    <div class="avatar-wrap"><div class="avatar">SC</div><div class="status-dot"></div></div>
+    <div class="name">Sofia Chen</div>
+    <div class="role">UI/UX Designer</div>
+    <div class="divider"></div>
+    <p class="bio">Creative designer who transforms complex problems into beautiful, intuitive interfaces.</p>
+    <div class="socials">
+      <a class="social-btn s-li" href="#">in</a>
+      <a class="social-btn s-dr" href="#">◉</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+    </div>
+  </div>
+
+  <div class="card" style="--c1:#43e97b;--c2:#38f9d7;">
+    <div class="avatar-wrap"><div class="avatar">JR</div><div class="status-dot" style="background:#ffd700;"></div></div>
+    <div class="name">James Rivera</div>
+    <div class="role">Backend Engineer</div>
+    <div class="divider"></div>
+    <p class="bio">Database architect and API specialist. Passionate about performance and security.</p>
+    <div class="socials">
+      <a class="social-btn s-li" href="#">in</a>
+      <a class="social-btn s-gh" href="#">⌥</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+    </div>
+  </div>
+
+  <div class="card" style="--c1:#4facfe;--c2:#00f2fe;">
+    <div class="avatar-wrap"><div class="avatar">EP</div><div class="status-dot"></div></div>
+    <div class="name">Emma Parker</div>
+    <div class="role">Product Manager</div>
+    <div class="divider"></div>
+    <p class="bio">Strategic thinker who bridges the gap between business goals and technical execution.</p>
+    <div class="socials">
+      <a class="social-btn s-li" href="#">in</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+    </div>
+  </div>
+
+  <div class="card" style="--c1:#ff9f43;--c2:#ee5a24;">
+    <div class="avatar-wrap"><div class="avatar">DK</div><div class="status-dot" style="background:#bbb;"></div></div>
+    <div class="name">David Kim</div>
+    <div class="role">DevOps Engineer</div>
+    <div class="divider"></div>
+    <p class="bio">Cloud infrastructure expert. Keeps everything running smoothly at scale.</p>
+    <div class="socials">
+      <a class="social-btn s-li" href="#">in</a>
+      <a class="social-btn s-gh" href="#">⌥</a>
+    </div>
+  </div>
+
+  <div class="card" style="--c1:#a29bfe;--c2:#fd79a8;">
+    <div class="avatar-wrap"><div class="avatar">LT</div><div class="status-dot"></div></div>
+    <div class="name">Luna Torres</div>
+    <div class="role">Marketing Lead</div>
+    <div class="divider"></div>
+    <p class="bio">Growth hacker and brand storyteller. Turns data into compelling narratives.</p>
+    <div class="socials">
+      <a class="social-btn s-li" href="#">in</a>
+      <a class="social-btn s-tw" href="#">𝕏</a>
+      <a class="social-btn s-dr" href="#">◉</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

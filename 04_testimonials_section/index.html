@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Testimonials</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:linear-gradient(135deg,#ffecd2,#fcb69f,#ffecd2);min-height:100vh;padding:5rem 1rem;}
+    .section-header{text-align:center;margin-bottom:4rem;}
+    .section-header .tag{display:inline-block;background:rgba(252,182,159,.4);color:#c0392b;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:.4rem 1rem;border-radius:50px;margin-bottom:1rem;}
+    .section-header h2{font-size:2.8rem;font-weight:800;color:#1a1a2e;margin-bottom:.8rem;}
+    .section-header h2 span{background:linear-gradient(135deg,#f093fb,#f5576c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .section-header p{color:#666;font-size:1.05rem;max-width:500px;margin:0 auto;}
+    .underline{width:80px;height:4px;background:linear-gradient(90deg,#f093fb,#f5576c);border-radius:2px;margin:.8rem auto 0;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1050px;margin:0 auto;}
+    .card{background:#fff;border-radius:24px;padding:2.5rem;box-shadow:0 10px 40px rgba(0,0,0,.08);transition:all .3s;position:relative;}
+    .card:hover{transform:translateY(-10px);box-shadow:0 25px 60px rgba(0,0,0,.15);}
+    .card.featured{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;}
+    .quote-icon{font-size:3rem;line-height:1;margin-bottom:1rem;opacity:.3;}
+    .card.featured .quote-icon{opacity:.5;}
+    .stars{display:flex;gap:.2rem;margin-bottom:1rem;}
+    .star{color:#ffd700;font-size:1.1rem;}
+    .card.featured .star{color:#ffe066;}
+    .testimonial-text{font-size:1rem;line-height:1.7;color:#444;margin-bottom:2rem;}
+    .card.featured .testimonial-text{color:rgba(255,255,255,.9);}
+    .author{display:flex;align-items:center;gap:1rem;}
+    .avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:#fff;flex-shrink:0;}
+    .author-info .name{font-weight:700;color:#1a1a2e;font-size:.95rem;}
+    .card.featured .author-info .name{color:#fff;}
+    .author-info .role{color:#999;font-size:.85rem;}
+    .card.featured .author-info .role{color:rgba(255,255,255,.7);}
+    .verified{display:inline-flex;align-items:center;gap:.3rem;background:rgba(67,233,123,.15);color:#27ae60;font-size:.75rem;font-weight:600;padding:.2rem .6rem;border-radius:50px;margin-top:.3rem;}
+    .card.featured .verified{background:rgba(255,255,255,.2);color:#fff;}
+    .stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap;}
+    .stat{text-align:center;}
+    .stat-num{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,#f093fb,#f5576c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .stat-label{color:#666;font-size:.9rem;margin-top:.2rem;}
+  </style>
+</head>
+<body>
+<div class="section-header">
+  <div class="tag">💬 Testimonials</div>
+  <h2>What Our <span>Clients Say</span></h2>
+  <div class="underline"></div>
+  <p>Don't just take our word for it — hear from the people who use our product every day.</p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <div class="quote-icon">"</div>
+    <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    <p class="testimonial-text">Working with this team was an absolute game-changer. They delivered our project on time, exceeded expectations, and the quality of work was outstanding. I couldn't be happier with the results.</p>
+    <div class="author">
+      <div class="avatar" style="background:linear-gradient(135deg,#667eea,#764ba2);">SJ</div>
+      <div class="author-info">
+        <div class="name">Sarah Johnson</div>
+        <div class="role">CEO at TechVentures</div>
+        <div class="verified">✓ Verified Client</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card featured">
+    <div class="quote-icon">"</div>
+    <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    <p class="testimonial-text">The attention to detail and creative approach brought our vision to life perfectly. The team was responsive, professional, and truly understood what we needed. Highly recommend!</p>
+    <div class="author">
+      <div class="avatar" style="background:rgba(255,255,255,.3);">MC</div>
+      <div class="author-info">
+        <div class="name">Michael Chen</div>
+        <div class="role">Product Manager at Nexus</div>
+        <div class="verified">✓ Verified Client</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="quote-icon">"</div>
+    <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+    <p class="testimonial-text">From concept to launch, the entire process was smooth and transparent. The final product not only looks amazing but also performs flawlessly. Our conversion rate increased by 40%!</p>
+    <div class="author">
+      <div class="avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c);">EP</div>
+      <div class="author-info">
+        <div class="name">Emily Parker</div>
+        <div class="role">Marketing Director at Bloom</div>
+        <div class="verified">✓ Verified Client</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Happy Clients</div></div>
+  <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Average Rating</div></div>
+  <div class="stat"><div class="stat-num">98%</div><div class="stat-label">Satisfaction Rate</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years Experience</div></div>
+</div>
+</body>
+</html>

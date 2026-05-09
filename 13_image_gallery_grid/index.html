@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#0d0d1a;color:#fff;padding:3rem 1rem;}
+    .header{text-align:center;margin-bottom:3rem;}
+    .header h1{font-size:2.5rem;font-weight:800;margin-bottom:.5rem;}
+    .header h1 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .header p{color:#666;}
+    .filter-bar{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+    .filter-btn{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#888;padding:.5rem 1.2rem;border-radius:50px;cursor:pointer;font-size:.85rem;transition:all .3s;}
+    .filter-btn:hover,.filter-btn.active{background:#6c63ff;color:#fff;border-color:#6c63ff;}
+    .gallery{columns:3;gap:1rem;max-width:1100px;margin:0 auto;}
+    .gallery-item{break-inside:avoid;margin-bottom:1rem;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;}
+    .gallery-item:hover .overlay{opacity:1;}
+    .gallery-item:hover .img-inner{transform:scale(1.05);}
+    .img-inner{width:100%;display:block;transition:transform .4s ease;border-radius:16px;}
+    .img-placeholder{width:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;border-radius:16px;transition:transform .4s ease;}
+    .overlay{position:absolute;inset:0;background:rgba(108,99,255,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .3s;border-radius:16px;}
+    .overlay-icon{font-size:2rem;margin-bottom:.5rem;}
+    .overlay-title{font-size:.9rem;font-weight:700;color:#fff;}
+    .overlay-cat{font-size:.75rem;color:rgba(255,255,255,.7);margin-top:.2rem;}
+    @media(max-width:768px){.gallery{columns:2;}}
+    @media(max-width:480px){.gallery{columns:1;}}
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>Photo <span>Gallery</span></h1>
+  <p>A curated collection of stunning visuals</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Nature</button>
+  <button class="filter-btn">Architecture</button>
+  <button class="filter-btn">Abstract</button>
+  <button class="filter-btn">Travel</button>
+</div>
+
+<div class="gallery">
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:280px;background:linear-gradient(135deg,#667eea,#764ba2);">🌄</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Mountain Sunrise</div><div class="overlay-cat">Nature</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:200px;background:linear-gradient(135deg,#f093fb,#f5576c);">🏙️</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">City Lights</div><div class="overlay-cat">Architecture</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:320px;background:linear-gradient(135deg,#4facfe,#00f2fe);">🌊</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Ocean Waves</div><div class="overlay-cat">Nature</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:240px;background:linear-gradient(135deg,#43e97b,#38f9d7);">🌿</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Forest Path</div><div class="overlay-cat">Nature</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:300px;background:linear-gradient(135deg,#fa709a,#fee140);">🎨</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Color Burst</div><div class="overlay-cat">Abstract</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:220px;background:linear-gradient(135deg,#a18cd1,#fbc2eb);">🗼</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Paris Tower</div><div class="overlay-cat">Travel</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:260px;background:linear-gradient(135deg,#ffecd2,#fcb69f);">🌅</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Desert Dunes</div><div class="overlay-cat">Travel</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:200px;background:linear-gradient(135deg,#2d3436,#636e72);">🏛️</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Ancient Ruins</div><div class="overlay-cat">Architecture</div></div>
+  </div>
+  <div class="gallery-item">
+    <div class="img-placeholder" style="height:280px;background:linear-gradient(135deg,#6c5ce7,#a29bfe);">✨</div>
+    <div class="overlay"><div class="overlay-icon">🔍</div><div class="overlay-title">Galaxy Dreams</div><div class="overlay-cat">Abstract</div></div>
+  </div>
+</div>
+</body>
+</html>

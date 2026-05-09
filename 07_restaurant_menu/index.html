@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>La Bella Cucina — Menu</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Georgia',serif;background:#faf6f0;color:#2c1810;}
+    .hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('') center/cover;background-color:#2c1810;padding:5rem 2rem;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,160,23,.2),transparent 70%);}
+    .hero-content{position:relative;z-index:1;}
+    .hero-tag{font-family:'Segoe UI',sans-serif;font-size:.8rem;letter-spacing:4px;text-transform:uppercase;color:#d4a017;margin-bottom:1rem;}
+    .hero h1{font-size:clamp(2.5rem,6vw,4rem);color:#fff;font-style:italic;margin-bottom:.5rem;}
+    .hero-sub{color:rgba(255,255,255,.7);font-size:1.1rem;font-style:italic;margin-bottom:1.5rem;}
+    .divider-ornament{display:flex;align-items:center;justify-content:center;gap:1rem;color:#d4a017;font-size:1.2rem;}
+    .divider-ornament::before,.divider-ornament::after{content:'';flex:1;max-width:100px;height:1px;background:linear-gradient(90deg,transparent,#d4a017);}
+    .divider-ornament::after{background:linear-gradient(90deg,#d4a017,transparent);}
+    .tabs-wrap{background:#2c1810;padding:0;display:flex;justify-content:center;position:sticky;top:0;z-index:10;}
+    .tabs{display:flex;gap:0;}
+    .tab-input{display:none;}
+    .tab-label{padding:1rem 2rem;color:rgba(255,255,255,.6);cursor:pointer;font-family:'Segoe UI',sans-serif;font-size:.9rem;letter-spacing:1px;text-transform:uppercase;border-bottom:3px solid transparent;transition:all .3s;}
+    .tab-label:hover{color:#d4a017;}
+    #tab1:checked~.tabs-wrap label[for="tab1"],
+    #tab2:checked~.tabs-wrap label[for="tab2"],
+    #tab3:checked~.tabs-wrap label[for="tab3"],
+    #tab4:checked~.tabs-wrap label[for="tab4"]{color:#d4a017;border-bottom-color:#d4a017;}
+    .tab-content{display:none;padding:3rem 2rem;max-width:900px;margin:0 auto;}
+    #tab1:checked~.content-wrap #content1,
+    #tab2:checked~.content-wrap #content2,
+    #tab3:checked~.content-wrap #content3,
+    #tab4:checked~.content-wrap #content4{display:block;}
+    .section-title{text-align:center;margin-bottom:2.5rem;}
+    .section-title h2{font-size:1.8rem;font-style:italic;color:#2c1810;margin-bottom:.3rem;}
+    .section-title p{color:#888;font-size:.9rem;font-family:'Segoe UI',sans-serif;}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:1.5rem;}
+    .menu-item{background:#fff;border-radius:12px;padding:1.5rem;display:flex;gap:1rem;box-shadow:0 2px 15px rgba(0,0,0,.06);transition:all .3s;border-left:4px solid transparent;}
+    .menu-item:hover{border-left-color:#d4a017;transform:translateX(5px);box-shadow:0 5px 25px rgba(0,0,0,.1);}
+    .item-emoji{font-size:2.5rem;flex-shrink:0;}
+    .item-info{flex:1;}
+    .item-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.3rem;}
+    .item-name{font-size:1.05rem;font-weight:700;color:#2c1810;}
+    .item-price{font-size:1.1rem;font-weight:700;color:#d4a017;white-space:nowrap;}
+    .item-desc{color:#888;font-size:.85rem;font-family:'Segoe UI',sans-serif;line-height:1.5;}
+    .item-tags{display:flex;gap:.4rem;margin-top:.5rem;flex-wrap:wrap;}
+    .tag{font-size:.7rem;padding:.2rem .5rem;border-radius:50px;font-family:'Segoe UI',sans-serif;}
+    .tag-spicy{background:#fff0f0;color:#e74c3c;}
+    .tag-veg{background:#f0fff4;color:#27ae60;}
+    .tag-popular{background:#fffbf0;color:#d4a017;}
+    .tag-new{background:#f0f0ff;color:#6c63ff;}
+    footer{background:#2c1810;color:rgba(255,255,255,.6);text-align:center;padding:2rem;font-family:'Segoe UI',sans-serif;font-size:.85rem;}
+    footer span{color:#d4a017;}
+  </style>
+</head>
+<body>
+
+<input type="radio" name="tabs" id="tab1" checked/>
+<input type="radio" name="tabs" id="tab2"/>
+<input type="radio" name="tabs" id="tab3"/>
+<input type="radio" name="tabs" id="tab4"/>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">Est. 1987 · Fine Dining</div>
+    <h1>La Bella Cucina</h1>
+    <p class="hero-sub">Authentic Italian Cuisine with a Modern Twist</p>
+    <div class="divider-ornament">✦</div>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs">
+    <label class="tab-label" for="tab1">🥗 Starters</label>
+    <label class="tab-label" for="tab2">🍝 Mains</label>
+    <label class="tab-label" for="tab3">🍮 Desserts</label>
+    <label class="tab-label" for="tab4">🍷 Drinks</label>
+  </div>
+</div>
+
+<div class="content-wrap">
+  <div class="tab-content" id="content1">
+    <div class="section-title"><h2>Antipasti & Starters</h2><p>Begin your journey with our handcrafted appetizers</p></div>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="item-emoji">🥗</div><div class="item-info"><div class="item-header"><span class="item-name">Caprese Salad</span><span class="item-price">$12</span></div><p class="item-desc">Fresh buffalo mozzarella, heirloom tomatoes, basil, extra virgin olive oil, aged balsamic.</p><div class="item-tags"><span class="tag tag-veg">Vegetarian</span><span class="tag tag-popular">Popular</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🍞</div><div class="item-info"><div class="item-header"><span class="item-name">Bruschetta al Pomodoro</span><span class="item-price">$9</span></div><p class="item-desc">Toasted sourdough, garlic-rubbed, topped with diced tomatoes, fresh basil, and sea salt.</p><div class="item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🦑</div><div class="item-info"><div class="item-header"><span class="item-name">Calamari Fritti</span><span class="item-price">$16</span></div><p class="item-desc">Crispy fried squid rings with lemon aioli and marinara dipping sauce.</p><div class="item-tags"><span class="tag tag-popular">Popular</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🧀</div><div class="item-info"><div class="item-header"><span class="item-name">Burrata con Prosciutto</span><span class="item-price">$18</span></div><p class="item-desc">Creamy burrata with San Daniele prosciutto, arugula, and truffle honey drizzle.</p><div class="item-tags"><span class="tag tag-new">Chef's Special</span></div></div></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="content2">
+    <div class="section-title"><h2>Primi & Secondi</h2><p>Handmade pastas and premium main courses</p></div>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="item-emoji">🍝</div><div class="item-info"><div class="item-header"><span class="item-name">Tagliatelle al Ragù</span><span class="item-price">$24</span></div><p class="item-desc">Slow-cooked Bolognese with hand-rolled egg tagliatelle, Parmigiano Reggiano.</p><div class="item-tags"><span class="tag tag-popular">Popular</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🍕</div><div class="item-info"><div class="item-header"><span class="item-name">Pizza Margherita DOC</span><span class="item-price">$19</span></div><p class="item-desc">San Marzano tomatoes, fior di latte, fresh basil, extra virgin olive oil. Wood-fired.</p><div class="item-tags"><span class="tag tag-veg">Vegetarian</span><span class="tag tag-popular">Popular</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🐟</div><div class="item-info"><div class="item-header"><span class="item-name">Branzino al Forno</span><span class="item-price">$32</span></div><p class="item-desc">Whole roasted sea bass with lemon, capers, olives, and roasted cherry tomatoes.</p><div class="item-tags"><span class="tag tag-new">Chef's Special</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🥩</div><div class="item-info"><div class="item-header"><span class="item-name">Bistecca alla Fiorentina</span><span class="item-price">$48</span></div><p class="item-desc">28-day aged T-bone steak, rosemary, garlic, served with roasted potatoes.</p><div class="item-tags"><span class="tag tag-spicy">Premium Cut</span></div></div></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <div class="section-title"><h2>Dolci</h2><p>End your meal on a sweet note</p></div>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="item-emoji">🍮</div><div class="item-info"><div class="item-header"><span class="item-name">Tiramisu Classico</span><span class="item-price">$11</span></div><p class="item-desc">House-made tiramisu with Savoiardi, mascarpone, espresso, and cocoa powder.</p><div class="item-tags"><span class="tag tag-popular">Popular</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🍨</div><div class="item-info"><div class="item-header"><span class="item-name">Panna Cotta</span><span class="item-price">$9</span></div><p class="item-desc">Silky vanilla panna cotta with seasonal berry coulis and mint.</p><div class="item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🍫</div><div class="item-info"><div class="item-header"><span class="item-name">Fondente al Cioccolato</span><span class="item-price">$13</span></div><p class="item-desc">Warm dark chocolate lava cake with vanilla gelato and raspberry sauce.</p><div class="item-tags"><span class="tag tag-new">New</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🍦</div><div class="item-info"><div class="item-header"><span class="item-name">Gelato Artigianale</span><span class="item-price">$8</span></div><p class="item-desc">Three scoops of house-made gelato. Ask your server for today's flavors.</p><div class="item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="content4">
+    <div class="section-title"><h2>Bevande</h2><p>Wines, cocktails, and non-alcoholic beverages</p></div>
+    <div class="menu-grid">
+      <div class="menu-item"><div class="item-emoji">🍷</div><div class="item-info"><div class="item-header"><span class="item-name">Chianti Classico DOCG</span><span class="item-price">$14/glass</span></div><p class="item-desc">Tuscan red wine with notes of cherry, plum, and earthy undertones. Full-bodied.</p><div class="item-tags"><span class="tag tag-popular">Popular</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🥂</div><div class="item-info"><div class="item-header"><span class="item-name">Prosecco DOC</span><span class="item-price">$11/glass</span></div><p class="item-desc">Light and bubbly Italian sparkling wine with hints of apple and white peach.</p></div></div>
+      <div class="menu-item"><div class="item-emoji">☕</div><div class="item-info"><div class="item-header"><span class="item-name">Espresso Romano</span><span class="item-price">$4</span></div><p class="item-desc">Double shot espresso served with a twist of lemon peel on the side.</p><div class="item-tags"><span class="tag tag-veg">Vegetarian</span></div></div></div>
+      <div class="menu-item"><div class="item-emoji">🍹</div><div class="item-info"><div class="item-header"><span class="item-name">Aperol Spritz</span><span class="item-price">$13</span></div><p class="item-desc">Classic Italian aperitivo with Aperol, Prosecco, soda water, and orange slice.</p><div class="item-tags"><span class="tag tag-popular">Popular</span></div></div></div>
+    </div>
+  </div>
+</div>
+
+<footer><p>© 2024 <span>La Bella Cucina</span> · Reservations: +1 (555) 987-6543 · Open Daily 12pm–11pm</p></footer>
+</body>
+</html>

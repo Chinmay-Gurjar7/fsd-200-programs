@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing Table</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);min-height:100vh;padding:4rem 1rem;}
+    .header{text-align:center;margin-bottom:3rem;}
+    .header h1{font-size:2.5rem;font-weight:800;color:#fff;margin-bottom:.5rem;}
+    .header p{color:rgba(255,255,255,.6);font-size:1.05rem;}
+    .toggle-wrap{display:flex;align-items:center;justify-content:center;gap:1rem;margin:2rem 0;}
+    .toggle-label{color:rgba(255,255,255,.7);font-size:.95rem;}
+    .toggle-label.active{color:#fff;font-weight:600;}
+    .toggle{position:relative;display:inline-block;width:56px;height:28px;}
+    .toggle input{opacity:0;width:0;height:0;}
+    .slider{position:absolute;inset:0;background:rgba(255,255,255,.2);border-radius:28px;cursor:pointer;transition:.3s;}
+    .slider::before{content:'';position:absolute;width:22px;height:22px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.3s;}
+    input:checked+.slider{background:linear-gradient(135deg,#6c63ff,#ff6584);}
+    input:checked+.slider::before{transform:translateX(28px);}
+    .save-badge{background:linear-gradient(135deg,#43e97b,#38f9d7);color:#0a2e1a;font-size:.75rem;font-weight:700;padding:.2rem .6rem;border-radius:50px;}
+    .cards{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;max-width:1050px;margin:0 auto;}
+    .card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:2.5rem 2rem;width:300px;position:relative;transition:all .3s;backdrop-filter:blur(10px);}
+    .card:hover{transform:translateY(-8px);border-color:rgba(108,99,255,.5);}
+    .card.featured{background:linear-gradient(135deg,rgba(108,99,255,.3),rgba(255,101,132,.2));border:2px solid rgba(108,99,255,.6);transform:scale(1.05);}
+    .card.featured:hover{transform:scale(1.05) translateY(-8px);}
+    .popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#6c63ff,#ff6584);color:#fff;font-size:.75rem;font-weight:700;padding:.35rem 1.2rem;border-radius:50px;white-space:nowrap;}
+    .plan-icon{font-size:2.5rem;margin-bottom:1rem;}
+    .plan-name{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:.5rem;}
+    .plan-price{display:flex;align-items:flex-start;gap:.2rem;margin:1rem 0;}
+    .currency{font-size:1.2rem;color:#fff;margin-top:.5rem;font-weight:600;}
+    .amount{font-size:3.5rem;font-weight:800;color:#fff;line-height:1;}
+    .period{font-size:.9rem;color:rgba(255,255,255,.5);align-self:flex-end;margin-bottom:.5rem;}
+    .plan-desc{color:rgba(255,255,255,.5);font-size:.9rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
+    .features{list-style:none;margin-bottom:2rem;}
+    .features li{display:flex;align-items:center;gap:.8rem;padding:.5rem 0;color:rgba(255,255,255,.8);font-size:.9rem;}
+    .features li .icon{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;}
+    .icon.check{background:rgba(67,233,123,.2);color:#43e97b;}
+    .icon.cross{background:rgba(255,101,132,.15);color:#ff6584;}
+    .btn{display:block;text-align:center;padding:.9rem;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .3s;cursor:pointer;border:none;width:100%;}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,.3);color:#fff;}
+    .btn-outline:hover{border-color:#6c63ff;background:rgba(108,99,255,.2);}
+    .btn-gradient{background:linear-gradient(135deg,#6c63ff,#ff6584);color:#fff;box-shadow:0 8px 25px rgba(108,99,255,.4);}
+    .btn-gradient:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(108,99,255,.6);}
+    .yearly-price{display:none;}
+    #toggle:checked~.cards .monthly-price{display:none;}
+    #toggle:checked~.cards .yearly-price{display:flex;}
+    #toggle:checked~.toggle-wrap .label-monthly{color:rgba(255,255,255,.5);font-weight:400;}
+    #toggle:checked~.toggle-wrap .label-yearly{color:#fff;font-weight:600;}
+    .label-yearly{color:rgba(255,255,255,.5);}
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>Simple, Transparent Pricing</h1>
+  <p>Choose the plan that works best for you. Upgrade or downgrade at any time.</p>
+</div>
+
+<input type="checkbox" id="toggle" style="display:none"/>
+
+<div class="toggle-wrap">
+  <span class="toggle-label label-monthly active">Monthly</span>
+  <label class="toggle" for="toggle"><span class="slider"></span></label>
+  <span class="toggle-label label-yearly">Yearly <span class="save-badge">Save 20%</span></span>
+</div>
+
+<div class="cards">
+  <!-- Starter -->
+  <div class="card">
+    <div class="plan-icon">🌱</div>
+    <div class="plan-name">Starter</div>
+    <div class="plan-price monthly-price"><span class="currency">$</span><span class="amount">9</span><span class="period">/mo</span></div>
+    <div class="plan-price yearly-price"><span class="currency">$</span><span class="amount">7</span><span class="period">/mo</span></div>
+    <div class="plan-desc">Perfect for individuals and small projects just getting started.</div>
+    <ul class="features">
+      <li><span class="icon check">✓</span> 5 Projects</li>
+      <li><span class="icon check">✓</span> 10 GB Storage</li>
+      <li><span class="icon check">✓</span> Basic Analytics</li>
+      <li><span class="icon check">✓</span> Email Support</li>
+      <li><span class="icon cross">✗</span> Custom Domain</li>
+      <li><span class="icon cross">✗</span> Team Collaboration</li>
+      <li><span class="icon cross">✗</span> Priority Support</li>
+    </ul>
+    <button class="btn btn-outline">Get Started</button>
+  </div>
+
+  <!-- Pro (Featured) -->
+  <div class="card featured">
+    <div class="popular-badge">⭐ Most Popular</div>
+    <div class="plan-icon">🚀</div>
+    <div class="plan-name">Pro</div>
+    <div class="plan-price monthly-price"><span class="currency">$</span><span class="amount">29</span><span class="period">/mo</span></div>
+    <div class="plan-price yearly-price"><span class="currency">$</span><span class="amount">23</span><span class="period">/mo</span></div>
+    <div class="plan-desc">Ideal for growing teams and professional projects.</div>
+    <ul class="features">
+      <li><span class="icon check">✓</span> Unlimited Projects</li>
+      <li><span class="icon check">✓</span> 100 GB Storage</li>
+      <li><span class="icon check">✓</span> Advanced Analytics</li>
+      <li><span class="icon check">✓</span> Priority Email Support</li>
+      <li><span class="icon check">✓</span> Custom Domain</li>
+      <li><span class="icon check">✓</span> Team Collaboration</li>
+      <li><span class="icon cross">✗</span> Dedicated Manager</li>
+    </ul>
+    <button class="btn btn-gradient">Start Free Trial</button>
+  </div>
+
+  <!-- Enterprise -->
+  <div class="card">
+    <div class="plan-icon">🏢</div>
+    <div class="plan-name">Enterprise</div>
+    <div class="plan-price monthly-price"><span class="currency">$</span><span class="amount">79</span><span class="period">/mo</span></div>
+    <div class="plan-price yearly-price"><span class="currency">$</span><span class="amount">63</span><span class="period">/mo</span></div>
+    <div class="plan-desc">For large organizations with advanced needs and full control.</div>
+    <ul class="features">
+      <li><span class="icon check">✓</span> Unlimited Projects</li>
+      <li><span class="icon check">✓</span> 1 TB Storage</li>
+      <li><span class="icon check">✓</span> Custom Analytics</li>
+      <li><span class="icon check">✓</span> 24/7 Phone Support</li>
+      <li><span class="icon check">✓</span> Custom Domain</li>
+      <li><span class="icon check">✓</span> Team Collaboration</li>
+      <li><span class="icon check">✓</span> Dedicated Manager</li>
+    </ul>
+    <button class="btn btn-outline">Contact Sales</button>
+  </div>
+</div>
+</body>
+</html>

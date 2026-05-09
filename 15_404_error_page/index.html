@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 — Page Not Found</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#0a0a1a;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;overflow:hidden;}
+    .bg{position:fixed;inset:0;z-index:0;}
+    .star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d) ease-in-out infinite alternate;}
+    @keyframes twinkle{from{opacity:.1;}to{opacity:.8;}}
+    .content{position:relative;z-index:1;}
+    .error-num{font-size:clamp(8rem,20vw,14rem);font-weight:900;line-height:1;background:linear-gradient(135deg,#6c63ff,#ff6584,#43e97b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:float 3s ease-in-out infinite;position:relative;}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+    .error-num::after{content:'404';position:absolute;inset:0;background:linear-gradient(135deg,#6c63ff,#ff6584,#43e97b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:blur(30px);opacity:.4;z-index:-1;}
+    .astronaut{font-size:5rem;animation:spin 8s linear infinite;display:block;margin:1rem auto;}
+    @keyframes spin{from{transform:rotate(0deg) translateX(30px) rotate(0deg);}to{transform:rotate(360deg) translateX(30px) rotate(-360deg);}}
+    h1{font-size:1.8rem;font-weight:700;margin-bottom:.8rem;color:#fff;}
+    p{color:rgba(255,255,255,.5);font-size:1rem;max-width:400px;margin:0 auto 2.5rem;line-height:1.7;}
+    .btn-group{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .btn-home{background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:700;transition:all .3s;box-shadow:0 8px 25px rgba(108,99,255,.4);}
+    .btn-home:hover{transform:translateY(-3px);box-shadow:0 12px 35px rgba(108,99,255,.6);}
+    .btn-back{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;transition:all .3s;}
+    .btn-back:hover{background:rgba(255,255,255,.15);}
+    .search-wrap{margin-top:2rem;display:flex;gap:.5rem;max-width:380px;margin-left:auto;margin-right:auto;}
+    .search-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50px;padding:.7rem 1.2rem;color:#fff;font-size:.9rem;outline:none;transition:border-color .3s;}
+    .search-input::placeholder{color:rgba(255,255,255,.3);}
+    .search-input:focus{border-color:rgba(108,99,255,.6);}
+    .search-btn{background:#6c63ff;color:#fff;border:none;padding:.7rem 1.2rem;border-radius:50px;cursor:pointer;font-size:.9rem;transition:all .3s;}
+    .search-btn:hover{background:#8b5cf6;}
+  </style>
+</head>
+<body>
+<div class="bg" id="bg"></div>
+
+<div class="content">
+  <div class="error-num">404</div>
+  <span class="astronaut">🧑‍🚀</span>
+  <h1>Houston, we have a problem!</h1>
+  <p>The page you're looking for has drifted off into deep space. It might have been moved, deleted, or never existed.</p>
+  <div class="btn-group">
+    <a href="#" class="btn-home">🏠 Go Home</a>
+    <a href="javascript:history.back()" class="btn-back">← Go Back</a>
+  </div>
+  <div class="search-wrap">
+    <input class="search-input" type="text" placeholder="Search for something..."/>
+    <button class="search-btn">🔍</button>
+  </div>
+</div>
+
+<script>
+  const bg = document.getElementById('bg');
+  for(let i=0;i<80;i++){
+    const s=document.createElement('div');
+    s.className='star';
+    const size=Math.random()*3+1;
+    s.style.cssText=`width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${Math.random()*3+1}s;animation-delay:${Math.random()*3}s;`;
+    bg.appendChild(s);
+  }
+</script>
+</body>
+</html>

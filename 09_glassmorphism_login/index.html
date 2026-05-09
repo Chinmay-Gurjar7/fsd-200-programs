@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Glassmorphism</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0a0a1a;}
+    .bg{position:fixed;inset:0;z-index:0;}
+    .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.6;animation:blobMove 8s ease-in-out infinite alternate;}
+    .blob1{width:500px;height:500px;background:radial-gradient(circle,#6c63ff,transparent);top:-100px;left:-100px;animation-delay:0s;}
+    .blob2{width:400px;height:400px;background:radial-gradient(circle,#ff6584,transparent);bottom:-100px;right:-100px;animation-delay:2s;}
+    .blob3{width:350px;height:350px;background:radial-gradient(circle,#43e97b,transparent);top:50%;left:50%;transform:translate(-50%,-50%);animation-delay:4s;}
+    @keyframes blobMove{0%{transform:translate(0,0) scale(1);}100%{transform:translate(30px,20px) scale(1.1);}}
+    .blob3{animation:blobMove3 10s ease-in-out infinite alternate;}
+    @keyframes blobMove3{0%{transform:translate(-50%,-50%) scale(1);}100%{transform:translate(-40%,-60%) scale(1.2);}}
+    .card{position:relative;z-index:1;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:3rem 2.5rem;width:100%;max-width:420px;box-shadow:0 25px 60px rgba(0,0,0,.4);}
+    .brand{text-align:center;margin-bottom:2rem;}
+    .brand-icon{width:56px;height:56px;background:linear-gradient(135deg,#6c63ff,#ff6584);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto .8rem;}
+    .brand h1{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:.2rem;}
+    .brand p{color:rgba(255,255,255,.5);font-size:.85rem;}
+    .form-group{margin-bottom:1.2rem;position:relative;}
+    .form-group label{display:block;color:rgba(255,255,255,.7);font-size:.85rem;margin-bottom:.5rem;font-weight:500;}
+    .input-wrap{position:relative;}
+    .input-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1rem;pointer-events:none;}
+    .form-group input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:.85rem 1rem .85rem 2.8rem;color:#fff;font-size:.95rem;outline:none;transition:all .3s;}
+    .form-group input::placeholder{color:rgba(255,255,255,.3);}
+    .form-group input:focus{border-color:rgba(108,99,255,.7);background:rgba(108,99,255,.1);box-shadow:0 0 0 3px rgba(108,99,255,.2);}
+    .pw-toggle{position:absolute;right:14px;top:50%;transform:translateY(-50%);cursor:pointer;color:rgba(255,255,255,.4);font-size:.9rem;user-select:none;}
+    #pw-check{display:none;}
+    #pw-check:checked~.input-wrap input[type="password"]{-webkit-text-security:none;}
+    .forgot{text-align:right;margin-top:-.5rem;margin-bottom:1.2rem;}
+    .forgot a{color:rgba(108,99,255,.9);font-size:.82rem;text-decoration:none;transition:color .3s;}
+    .forgot a:hover{color:#6c63ff;}
+    .btn-login{width:100%;background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;border:none;padding:1rem;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:all .3s;box-shadow:0 8px 25px rgba(108,99,255,.4);margin-bottom:1.5rem;}
+    .btn-login:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(108,99,255,.6);}
+    .divider{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;}
+    .divider::before,.divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1);}
+    .divider span{color:rgba(255,255,255,.3);font-size:.8rem;white-space:nowrap;}
+    .social-btns{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem;}
+    .social-btn{display:flex;align-items:center;justify-content:center;gap:.6rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.75rem;color:rgba(255,255,255,.8);font-size:.85rem;cursor:pointer;transition:all .3s;text-decoration:none;}
+    .social-btn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);}
+    .signup-link{text-align:center;color:rgba(255,255,255,.5);font-size:.85rem;}
+    .signup-link a{color:#6c63ff;text-decoration:none;font-weight:600;}
+    .signup-link a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+<div class="bg">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
+
+<div class="card">
+  <div class="brand">
+    <div class="brand-icon">✦</div>
+    <h1>Welcome back</h1>
+    <p>Sign in to your account to continue</p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label>Email Address</label>
+      <div class="input-wrap">
+        <span class="input-icon">📧</span>
+        <input type="email" placeholder="you@example.com"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="checkbox" id="pw-check"/>
+      <div class="input-wrap">
+        <span class="input-icon">🔒</span>
+        <input type="password" placeholder="Enter your password"/>
+        <label class="pw-toggle" for="pw-check">👁</label>
+      </div>
+    </div>
+
+    <div class="forgot"><a href="#">Forgot password?</a></div>
+
+    <button type="submit" class="btn-login">Sign In →</button>
+  </form>
+
+  <div class="divider"><span>or continue with</span></div>
+
+  <div class="social-btns">
+    <a href="#" class="social-btn">🌐 Google</a>
+    <a href="#" class="social-btn">⌥ GitHub</a>
+  </div>
+
+  <div class="signup-link">Don't have an account? <a href="#">Sign up free</a></div>
+</div>
+</body>
+</html>

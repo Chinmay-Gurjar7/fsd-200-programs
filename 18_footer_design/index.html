@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Footer Designs</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;}
+    .page-label{text-align:center;padding:3rem 1rem 1rem;font-size:2rem;font-weight:800;color:#1a1a2e;}
+    .page-label span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .page-sub{text-align:center;color:#888;margin-bottom:3rem;}
+    .demo-label{text-align:center;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#999;padding:2rem 0 .5rem;}
+
+    /* Footer 1 - Dark Corporate */
+    .footer1{background:#0f0f1a;color:#fff;padding:4rem 2rem 2rem;}
+    .f1-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1100px;margin:0 auto 3rem;}
+    .f1-brand .logo{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:1rem;}
+    .f1-brand p{color:#666;font-size:.9rem;line-height:1.7;max-width:280px;margin-bottom:1.5rem;}
+    .social-row{display:flex;gap:.8rem;}
+    .soc{width:38px;height:38px;background:rgba(255,255,255,.07);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;font-size:.9rem;}
+    .soc:hover{background:#6c63ff;transform:translateY(-3px);}
+    .f1-col h4{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff;margin-bottom:1.2rem;}
+    .f1-col ul{list-style:none;}
+    .f1-col ul li{margin-bottom:.7rem;}
+    .f1-col ul a{color:#666;text-decoration:none;font-size:.9rem;transition:color .3s;}
+    .f1-col ul a:hover{color:#6c63ff;}
+    .f1-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:1rem;}
+    .f1-bottom p{color:#555;font-size:.85rem;}
+    .f1-bottom-links{display:flex;gap:1.5rem;}
+    .f1-bottom-links a{color:#555;text-decoration:none;font-size:.82rem;transition:color .3s;}
+    .f1-bottom-links a:hover{color:#6c63ff;}
+
+    /* Footer 2 - Minimal Light */
+    .footer2{background:#fff;border-top:1px solid #f0f0f0;padding:3rem 2rem 1.5rem;}
+    .f2-inner{max-width:1100px;margin:0 auto;}
+    .f2-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem;}
+    .f2-logo{font-size:1.4rem;font-weight:800;color:#0f0f1a;}
+    .f2-logo span{color:#6c63ff;}
+    .f2-nav{display:flex;gap:2rem;list-style:none;flex-wrap:wrap;}
+    .f2-nav a{color:#888;text-decoration:none;font-size:.9rem;transition:color .3s;}
+    .f2-nav a:hover{color:#6c63ff;}
+    .f2-newsletter{display:flex;gap:.5rem;}
+    .f2-input{background:#f5f5f5;border:1px solid #e0e0e0;border-radius:8px;padding:.6rem 1rem;font-size:.85rem;outline:none;width:200px;transition:border-color .3s;}
+    .f2-input:focus{border-color:#6c63ff;}
+    .f2-sub-btn{background:#6c63ff;color:#fff;border:none;padding:.6rem 1rem;border-radius:8px;font-size:.85rem;cursor:pointer;transition:all .3s;}
+    .f2-sub-btn:hover{background:#8b5cf6;}
+    .f2-divider{height:1px;background:#f0f0f0;margin-bottom:1.5rem;}
+    .f2-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .f2-bottom p{color:#bbb;font-size:.82rem;}
+    .f2-badges{display:flex;gap:.5rem;}
+    .badge{background:#f5f5f5;color:#888;font-size:.72rem;padding:.3rem .7rem;border-radius:6px;}
+
+    @media(max-width:768px){.f1-grid{grid-template-columns:1fr 1fr;}.f2-top{flex-direction:column;align-items:flex-start;}}
+    @media(max-width:480px){.f1-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div class="page-label">Footer <span>Designs</span></div>
+<p class="page-sub">Professional footer layouts for modern websites</p>
+
+<div class="demo-label">Style 01 — Dark Corporate Footer</div>
+<footer class="footer1">
+  <div class="f1-grid">
+    <div class="f1-brand">
+      <div class="logo">✦ Nexus</div>
+      <p>Building the future of digital experiences. Trusted by 50,000+ developers worldwide.</p>
+      <div class="social-row">
+        <div class="soc">𝕏</div>
+        <div class="soc">in</div>
+        <div class="soc">⌥</div>
+        <div class="soc">▶</div>
+      </div>
+    </div>
+    <div class="f1-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Roadmap</a></li>
+        <li><a href="#">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="f1-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Press Kit</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="f1-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">GDPR</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f1-bottom">
+    <p>© 2024 Nexus Inc. All rights reserved.</p>
+    <div class="f1-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<div class="demo-label">Style 02 — Minimal Light Footer</div>
+<footer class="footer2">
+  <div class="f2-inner">
+    <div class="f2-top">
+      <div class="f2-logo">Vivid<span>.</span></div>
+      <ul class="f2-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="f2-newsletter">
+        <input class="f2-input" type="email" placeholder="Your email"/>
+        <button class="f2-sub-btn">Subscribe</button>
+      </div>
+    </div>
+    <div class="f2-divider"></div>
+    <div class="f2-bottom">
+      <p>© 2024 Vivid. Made with ♥ in San Francisco</p>
+      <div class="f2-badges">
+        <span class="badge">🔒 SSL Secured</span>
+        <span class="badge">✓ GDPR Compliant</span>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

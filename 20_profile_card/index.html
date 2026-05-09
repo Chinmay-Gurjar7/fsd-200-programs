@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Card — Dark Mode</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#0d0d1a;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;flex-wrap:wrap;gap:2rem;}
+
+    /* Card 1 - Main Profile */
+    .card1{background:#16162a;border:1px solid rgba(108,99,255,.2);border-radius:24px;width:320px;overflow:hidden;transition:all .3s;}
+    .card1:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(108,99,255,.2);border-color:rgba(108,99,255,.5);}
+    .card1-cover{height:120px;background:linear-gradient(135deg,#6c63ff,#ff6584);position:relative;}
+    .card1-cover::after{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");}
+    .card1-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1a1a2e,#6c63ff);border:4px solid #16162a;position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;font-size:2rem;}
+    .card1-body{padding:3rem 1.5rem 1.5rem;text-align:center;}
+    .card1-name{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:.2rem;}
+    .card1-role{color:#6c63ff;font-size:.85rem;font-weight:600;margin-bottom:.8rem;}
+    .card1-bio{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.6;margin-bottom:1.2rem;}
+    .card1-stats{display:flex;justify-content:center;gap:0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:1.2rem;}
+    .c1-stat{flex:1;padding:.8rem;text-align:center;border-right:1px solid rgba(255,255,255,.07);}
+    .c1-stat:last-child{border-right:none;}
+    .c1-stat-num{font-size:1.1rem;font-weight:800;color:#fff;}
+    .c1-stat-label{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:.1rem;}
+    .card1-btns{display:flex;gap:.8rem;}
+    .c1-btn1{flex:1;background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;border:none;padding:.7rem;border-radius:10px;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .3s;}
+    .c1-btn1:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(108,99,255,.4);}
+    .c1-btn2{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.7);padding:.7rem 1rem;border-radius:10px;font-size:.85rem;cursor:pointer;transition:all .3s;}
+    .c1-btn2:hover{background:rgba(255,255,255,.12);}
+
+    /* Card 2 - Horizontal */
+    .card2{background:#16162a;border:1px solid rgba(255,101,132,.2);border-radius:20px;width:380px;padding:1.5rem;display:flex;gap:1.2rem;align-items:center;transition:all .3s;}
+    .card2:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(255,101,132,.15);border-color:rgba(255,101,132,.5);}
+    .c2-avatar{width:70px;height:70px;border-radius:50%;background:linear-gradient(135deg,#ff6584,#f093fb);display:flex;align-items:center;justify-content:center;font-size:1.8rem;flex-shrink:0;}
+    .c2-info{flex:1;}
+    .c2-name{font-size:1rem;font-weight:800;color:#fff;margin-bottom:.2rem;}
+    .c2-role{color:#ff6584;font-size:.8rem;font-weight:600;margin-bottom:.5rem;}
+    .c2-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.8rem;}
+    .c2-tag{background:rgba(255,101,132,.15);color:#ff6584;font-size:.7rem;padding:.2rem .5rem;border-radius:50px;}
+    .c2-follow{background:linear-gradient(135deg,#ff6584,#f093fb);color:#fff;border:none;padding:.5rem 1.2rem;border-radius:50px;font-size:.8rem;font-weight:700;cursor:pointer;transition:all .3s;}
+    .c2-follow:hover{transform:scale(1.05);}
+
+    /* Card 3 - Minimal */
+    .card3{background:#16162a;border:1px solid rgba(67,233,123,.2);border-radius:20px;width:280px;padding:2rem;text-align:center;transition:all .3s;position:relative;overflow:hidden;}
+    .card3::before{content:'';position:absolute;top:-50px;left:50%;transform:translateX(-50%);width:200px;height:200px;background:radial-gradient(circle,rgba(67,233,123,.1),transparent);pointer-events:none;}
+    .card3:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(67,233,123,.15);}
+    .c3-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#43e97b,#38f9d7);display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 1rem;box-shadow:0 8px 25px rgba(67,233,123,.3);}
+    .c3-name{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:.2rem;}
+    .c3-role{color:#43e97b;font-size:.82rem;margin-bottom:.3rem;}
+    .c3-location{color:rgba(255,255,255,.4);font-size:.78rem;margin-bottom:1.2rem;}
+    .c3-socials{display:flex;justify-content:center;gap:.6rem;margin-bottom:1.2rem;}
+    .c3-soc{width:34px;height:34px;background:rgba(255,255,255,.06);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.8rem;cursor:pointer;transition:all .3s;}
+    .c3-soc:hover{background:#43e97b;color:#0a2e1a;}
+    .c3-btn{width:100%;background:rgba(67,233,123,.15);border:1px solid rgba(67,233,123,.3);color:#43e97b;padding:.7rem;border-radius:10px;font-size:.85rem;font-weight:700;cursor:pointer;transition:all .3s;}
+    .c3-btn:hover{background:#43e97b;color:#0a2e1a;}
+  </style>
+</head>
+<body>
+
+<!-- Card 1: Full Profile -->
+<div class="card1">
+  <div class="card1-cover">
+    <div class="card1-avatar">👨‍💻</div>
+  </div>
+  <div class="card1-body">
+    <div class="card1-name">Alex Morgan</div>
+    <div class="card1-role">Senior Full Stack Developer</div>
+    <p class="card1-bio">Building beautiful digital experiences. Open source contributor. Coffee enthusiast. ☕</p>
+    <div class="card1-stats">
+      <div class="c1-stat"><div class="c1-stat-num">248</div><div class="c1-stat-label">Projects</div></div>
+      <div class="c1-stat"><div class="c1-stat-num">12.4K</div><div class="c1-stat-label">Followers</div></div>
+      <div class="c1-stat"><div class="c1-stat-num">891</div><div class="c1-stat-label">Following</div></div>
+    </div>
+    <div class="card1-btns">
+      <button class="c1-btn1">Follow</button>
+      <button class="c1-btn2">💬</button>
+    </div>
+  </div>
+</div>
+
+<!-- Card 2: Horizontal -->
+<div class="card2">
+  <div class="c2-avatar">🎨</div>
+  <div class="c2-info">
+    <div class="c2-name">Sofia Chen</div>
+    <div class="c2-role">UI/UX Designer · Figma Expert</div>
+    <div class="c2-tags">
+      <span class="c2-tag">Design</span>
+      <span class="c2-tag">Branding</span>
+      <span class="c2-tag">Motion</span>
+    </div>
+    <button class="c2-follow">+ Follow</button>
+  </div>
+</div>
+
+<!-- Card 3: Minimal -->
+<div class="card3">
+  <div class="c3-avatar">🚀</div>
+  <div class="c3-name">James Rivera</div>
+  <div class="c3-role">DevOps Engineer</div>
+  <div class="c3-location">📍 Austin, Texas</div>
+  <div class="c3-socials">
+    <div class="c3-soc">in</div>
+    <div class="c3-soc">𝕏</div>
+    <div class="c3-soc">⌥</div>
+  </div>
+  <button class="c3-btn">View Profile</button>
+</div>
+
+</body>
+</html>

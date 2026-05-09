@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Newsletter Signup</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem;background:#0d0d1a;overflow:hidden;position:relative;}
+    .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(108,99,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(108,99,255,.05) 1px,transparent 1px);background-size:50px 50px;}
+    .orb{position:fixed;border-radius:50%;filter:blur(100px);pointer-events:none;}
+    .orb1{width:600px;height:600px;background:rgba(108,99,255,.15);top:-200px;right:-200px;}
+    .orb2{width:500px;height:500px;background:rgba(255,101,132,.1);bottom:-200px;left:-200px;}
+    .card{position:relative;z-index:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:32px;padding:4rem 3rem;max-width:600px;width:100%;text-align:center;backdrop-filter:blur(10px);}
+    .icon-wrap{width:80px;height:80px;background:linear-gradient(135deg,#6c63ff,#ff6584);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin:0 auto 2rem;box-shadow:0 15px 40px rgba(108,99,255,.4);animation:float 3s ease-in-out infinite;}
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+    .tag{display:inline-block;background:rgba(108,99,255,.2);border:1px solid rgba(108,99,255,.3);color:#a78bfa;font-size:.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;}
+    h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:1rem;}
+    h1 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .subtitle{color:rgba(255,255,255,.5);font-size:1rem;line-height:1.7;margin-bottom:2.5rem;max-width:420px;margin-left:auto;margin-right:auto;}
+    .form-row{display:flex;gap:.8rem;margin-bottom:1rem;}
+    .email-input{flex:1;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:.9rem 1.2rem;color:#fff;font-size:.95rem;outline:none;transition:all .3s;}
+    .email-input::placeholder{color:rgba(255,255,255,.3);}
+    .email-input:focus{border-color:rgba(108,99,255,.6);background:rgba(108,99,255,.1);box-shadow:0 0 0 3px rgba(108,99,255,.15);}
+    .btn-sub{background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;border:none;padding:.9rem 1.8rem;border-radius:14px;font-size:.95rem;font-weight:700;cursor:pointer;transition:all .3s;white-space:nowrap;box-shadow:0 8px 25px rgba(108,99,255,.4);}
+    .btn-sub:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(108,99,255,.6);}
+    .privacy{color:rgba(255,255,255,.3);font-size:.78rem;margin-bottom:2.5rem;}
+    .privacy a{color:rgba(108,99,255,.8);text-decoration:none;}
+    .stats{display:flex;justify-content:center;gap:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08);}
+    .stat-item{text-align:center;}
+    .stat-num{font-size:1.4rem;font-weight:800;color:#fff;}
+    .stat-label{font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.2rem;}
+    .avatars{display:flex;justify-content:center;margin-bottom:.5rem;}
+    .av{width:28px;height:28px;border-radius:50%;border:2px solid #0d0d1a;margin-left:-8px;font-size:.7rem;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;}
+    .av:first-child{margin-left:0;}
+    @media(max-width:500px){.form-row{flex-direction:column;}.stats{gap:1.5rem;}}
+  </style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+
+<div class="card">
+  <div class="icon-wrap">✉️</div>
+  <div class="tag">📬 Newsletter</div>
+  <h1>Stay Ahead of the <span>Curve</span></h1>
+  <p class="subtitle">Get weekly insights on design, development, and tech trends delivered straight to your inbox. No spam, ever.</p>
+
+  <div class="form-row">
+    <input class="email-input" type="email" placeholder="Enter your email address"/>
+    <button class="btn-sub">Subscribe →</button>
+  </div>
+  <p class="privacy">By subscribing, you agree to our <a href="#">Privacy Policy</a>. Unsubscribe anytime.</p>
+
+  <div class="stats">
+    <div class="stat-item">
+      <div class="avatars">
+        <div class="av" style="background:#6c63ff;">A</div>
+        <div class="av" style="background:#ff6584;">B</div>
+        <div class="av" style="background:#43e97b;">C</div>
+        <div class="av" style="background:#ffd700;">D</div>
+      </div>
+      <div class="stat-num">12,400+</div>
+      <div class="stat-label">Subscribers</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Weekly</div>
+      <div class="stat-label">Delivery</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Avg. Rating</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

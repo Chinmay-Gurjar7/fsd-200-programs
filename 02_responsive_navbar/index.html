@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Navbar Designs</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#f0f2f5;}
+    .page-title{text-align:center;padding:3rem 1rem 1rem;font-size:2rem;font-weight:800;color:#1a1a2e;}
+    .page-title span{color:#6c63ff;}
+    .page-sub{text-align:center;color:#666;margin-bottom:3rem;}
+    .demo-section{margin:2rem auto;max-width:1100px;padding:0 1rem;}
+    .demo-label{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#999;margin-bottom:.8rem;padding-left:.5rem;}
+    .demo-wrapper{border-radius:16px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.12);margin-bottom:3rem;}
+
+    /* NAVBAR 1 - Glassmorphism */
+    .nav1{padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,.15);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.3);position:relative;z-index:1;}
+    .nav1-bg{background:linear-gradient(135deg,#667eea,#764ba2);padding:0;min-height:80px;position:relative;}
+    .nav1-bg::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+    .nav1 .logo{font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:-1px;}
+    .nav1 ul{display:flex;gap:2rem;list-style:none;}
+    .nav1 ul a{color:rgba(255,255,255,.85);text-decoration:none;font-size:.95rem;padding:.3rem 0;position:relative;transition:color .3s;}
+    .nav1 ul a::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:#fff;transition:width .3s;}
+    .nav1 ul a:hover{color:#fff;}
+    .nav1 ul a:hover::after{width:100%;}
+    .nav1 .nav-btn{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;padding:.5rem 1.2rem;border-radius:50px;cursor:pointer;font-size:.9rem;transition:all .3s;}
+    .nav1 .nav-btn:hover{background:rgba(255,255,255,.35);}
+
+    /* NAVBAR 2 - Dark Minimal */
+    .nav2-bg{background:#0f0f1a;min-height:80px;}
+    .nav2{padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;height:70px;}
+    .nav2 .logo{font-size:1.3rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:.5rem;}
+    .nav2 .logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#6c63ff,#ff6584);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;}
+    .nav2 ul{display:flex;gap:.3rem;list-style:none;}
+    .nav2 ul a{color:#888;text-decoration:none;font-size:.9rem;padding:.5rem 1rem;border-radius:8px;transition:all .3s;}
+    .nav2 ul a:hover{color:#fff;background:rgba(255,255,255,.08);}
+    .nav2 ul a.active{color:#6c63ff;background:rgba(108,99,255,.15);}
+    .nav2-right{display:flex;align-items:center;gap:1rem;}
+    .nav2-icon{width:36px;height:36px;background:rgba(255,255,255,.06);border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#888;transition:all .3s;}
+    .nav2-icon:hover{background:rgba(108,99,255,.2);color:#6c63ff;}
+    .nav2-avatar{width:36px;height:36px;background:linear-gradient(135deg,#6c63ff,#ff6584);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;font-weight:700;cursor:pointer;}
+
+    /* NAVBAR 3 - Colorful Pill */
+    .nav3-bg{background:#fff;min-height:80px;border-top:4px solid transparent;border-image:linear-gradient(90deg,#f093fb,#f5576c,#4facfe,#00f2fe) 1;}
+    .nav3{padding:0 2.5rem;display:flex;justify-content:space-between;align-items:center;height:76px;}
+    .nav3 .logo{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,#f093fb,#f5576c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav3 ul{display:flex;gap:.5rem;list-style:none;}
+    .nav3 ul a{color:#555;text-decoration:none;font-size:.9rem;padding:.5rem 1.1rem;border-radius:50px;transition:all .3s;font-weight:500;}
+    .nav3 ul a:hover{color:#f5576c;background:#fff0f3;}
+    .nav3 ul a.active{background:linear-gradient(135deg,#f093fb,#f5576c);color:#fff;box-shadow:0 4px 15px rgba(245,87,108,.4);}
+    .nav3-btns{display:flex;gap:.8rem;}
+    .nav3-login{color:#555;text-decoration:none;font-size:.9rem;padding:.5rem 1rem;border-radius:50px;transition:all .3s;}
+    .nav3-login:hover{color:#f5576c;}
+    .nav3-signup{background:linear-gradient(135deg,#4facfe,#00f2fe);color:#fff;text-decoration:none;font-size:.9rem;padding:.5rem 1.2rem;border-radius:50px;font-weight:600;transition:all .3s;box-shadow:0 4px 15px rgba(79,172,254,.4);}
+    .nav3-signup:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(79,172,254,.5);}
+
+    /* NAVBAR 4 - Sidebar Style */
+    .nav4-container{display:flex;min-height:200px;background:#1e1e2e;}
+    .nav4-sidebar{width:220px;background:#16162a;padding:1.5rem 1rem;display:flex;flex-direction:column;gap:.3rem;border-right:1px solid rgba(255,255,255,.06);}
+    .nav4-logo{font-size:1.2rem;font-weight:800;color:#fff;padding:.5rem .8rem;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+    .nav4-logo-dot{width:10px;height:10px;background:linear-gradient(135deg,#6c63ff,#ff6584);border-radius:50%;}
+    .nav4-item{display:flex;align-items:center;gap:.8rem;padding:.7rem .8rem;border-radius:10px;color:#888;font-size:.9rem;cursor:pointer;transition:all .3s;}
+    .nav4-item:hover{background:rgba(255,255,255,.06);color:#fff;}
+    .nav4-item.active{background:rgba(108,99,255,.2);color:#6c63ff;}
+    .nav4-item span{font-size:1rem;}
+    .nav4-content{flex:1;padding:1.5rem;color:#888;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
+    .nav4-content p{text-align:center;line-height:2;}
+
+    .footer-note{text-align:center;padding:2rem;color:#999;font-size:.85rem;}
+  </style>
+</head>
+<body>
+
+<div class="page-title">Navbar <span>Design Collection</span></div>
+<p class="page-sub">4 professional navigation bar styles — ready to use</p>
+
+<div class="demo-section">
+  <div class="demo-label">Style 01 — Glassmorphism Navbar</div>
+  <div class="demo-wrapper">
+    <div class="nav1-bg">
+      <nav class="nav1">
+        <div class="logo">✦ Lumina</div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="nav-btn">Get Started</button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="demo-label">Style 02 — Dark Minimal Navbar</div>
+  <div class="demo-wrapper">
+    <div class="nav2-bg">
+      <nav class="nav2">
+        <div class="logo"><div class="logo-icon">⚡</div>Nexus</div>
+        <ul>
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+        <div class="nav2-right">
+          <div class="nav2-icon">🔔</div>
+          <div class="nav2-icon">🔍</div>
+          <div class="nav2-avatar">AM</div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="demo-label">Style 03 — Colorful Pill Navbar</div>
+  <div class="demo-wrapper">
+    <div class="nav3-bg">
+      <nav class="nav3">
+        <div class="logo">Vivid.</div>
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Docs</a></li>
+        </ul>
+        <div class="nav3-btns">
+          <a href="#" class="nav3-login">Log in</a>
+          <a href="#" class="nav3-signup">Sign up free</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="demo-label">Style 04 — Sidebar Navigation</div>
+  <div class="demo-wrapper">
+    <div class="nav4-container">
+      <nav class="nav4-sidebar">
+        <div class="nav4-logo"><div class="nav4-logo-dot"></div>Orbit</div>
+        <div class="nav4-item active"><span>🏠</span> Dashboard</div>
+        <div class="nav4-item"><span>📊</span> Analytics</div>
+        <div class="nav4-item"><span>📁</span> Projects</div>
+        <div class="nav4-item"><span>👥</span> Team</div>
+        <div class="nav4-item"><span>💬</span> Messages</div>
+        <div class="nav4-item"><span>⚙️</span> Settings</div>
+      </nav>
+      <div class="nav4-content">
+        <p>← Sidebar navigation panel<br/>Click items to see hover states<br/>Active item highlighted in purple</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer-note">4 Navbar Designs — HTML & CSS Only</div>
+</body>
+</html>

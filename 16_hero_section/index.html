@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hero Section Designs</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;}
+    .label{text-align:center;padding:2rem 1rem .5rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#999;background:#f5f5f5;}
+
+    /* Hero 1 - Gradient Mesh */
+    .hero1{min-height:100vh;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;position:relative;overflow:hidden;}
+    .hero1::before{content:'';position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(108,99,255,.3),transparent 70%);top:-200px;right:-200px;animation:orb1 8s ease-in-out infinite alternate;}
+    .hero1::after{content:'';position:absolute;width:500px;height:500px;background:radial-gradient(circle,rgba(255,101,132,.2),transparent 70%);bottom:-200px;left:-200px;animation:orb1 10s ease-in-out infinite alternate-reverse;}
+    @keyframes orb1{from{transform:translate(0,0);}to{transform:translate(40px,30px);}}
+    .h1-content{position:relative;z-index:1;max-width:700px;}
+    .h1-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(108,99,255,.2);border:1px solid rgba(108,99,255,.4);color:#a78bfa;padding:.4rem 1rem;border-radius:50px;font-size:.82rem;margin-bottom:1.5rem;}
+    .h1-badge::before{content:'';width:6px;height:6px;background:#6c63ff;border-radius:50%;animation:blink 1.5s ease-in-out infinite;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+    .hero1 h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.2rem;}
+    .hero1 h1 .grad{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero1 p{color:rgba(255,255,255,.6);font-size:1.1rem;max-width:500px;margin:0 auto 2.5rem;line-height:1.7;}
+    .h1-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+    .h1-btn1{background:linear-gradient(135deg,#6c63ff,#8b5cf6);color:#fff;padding:.9rem 2.2rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:1rem;transition:all .3s;box-shadow:0 8px 25px rgba(108,99,255,.4);}
+    .h1-btn1:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(108,99,255,.6);}
+    .h1-btn2{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;padding:.9rem 2.2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:1rem;transition:all .3s;}
+    .h1-btn2:hover{background:rgba(255,255,255,.15);}
+    .h1-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);}
+    .h1-stat-num{font-size:1.8rem;font-weight:800;color:#fff;}
+    .h1-stat-label{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:.2rem;}
+
+    /* Hero 2 - Split Layout */
+    .hero2{min-height:100vh;background:#fff;display:grid;grid-template-columns:1fr 1fr;align-items:center;}
+    .h2-left{padding:4rem 3rem 4rem 5rem;}
+    .h2-tag{display:inline-block;background:#ede9fe;color:#6c63ff;font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;}
+    .hero2 h1{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;color:#0f0f1a;line-height:1.15;margin-bottom:1.2rem;}
+    .hero2 h1 span{background:linear-gradient(135deg,#6c63ff,#ff6584);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero2 p{color:#666;font-size:1rem;line-height:1.7;margin-bottom:2rem;max-width:420px;}
+    .h2-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+    .h2-btn1{background:#0f0f1a;color:#fff;padding:.85rem 2rem;border-radius:12px;text-decoration:none;font-weight:700;transition:all .3s;}
+    .h2-btn1:hover{background:#6c63ff;transform:translateY(-2px);}
+    .h2-btn2{color:#6c63ff;padding:.85rem 2rem;border-radius:12px;text-decoration:none;font-weight:600;display:flex;align-items:center;gap:.5rem;transition:all .3s;}
+    .h2-btn2:hover{gap:.8rem;}
+    .h2-right{background:linear-gradient(135deg,#ede9fe,#fce7f3);height:100%;display:flex;align-items:center;justify-content:center;font-size:10rem;}
+    @media(max-width:768px){.hero2{grid-template-columns:1fr;}.h2-left{padding:3rem 1.5rem;}.h2-right{height:300px;}}
+  </style>
+</head>
+<body>
+<div class="label">Hero Style 01 — Dark Gradient Mesh</div>
+<section class="hero1">
+  <div class="h1-content">
+    <div class="h1-badge">🚀 Now in Public Beta</div>
+    <h1>Build <span class="grad">Faster</span><br/>Ship <span class="grad">Smarter</span></h1>
+    <p>The all-in-one platform for modern development teams. Design, build, and deploy with unprecedented speed.</p>
+    <div class="h1-btns">
+      <a href="#" class="h1-btn1">Start for Free →</a>
+      <a href="#" class="h1-btn2">▶ Watch Demo</a>
+    </div>
+    <div class="h1-stats">
+      <div><div class="h1-stat-num">50K+</div><div class="h1-stat-label">Developers</div></div>
+      <div><div class="h1-stat-num">99.9%</div><div class="h1-stat-label">Uptime</div></div>
+      <div><div class="h1-stat-num">4.9★</div><div class="h1-stat-label">Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="label">Hero Style 02 — Split Layout</div>
+<section class="hero2">
+  <div class="h2-left">
+    <div class="h2-tag">✨ Trusted by 10,000+ teams</div>
+    <h1>Design Without <span>Limits</span></h1>
+    <p>Create stunning interfaces with our powerful design system. From wireframes to production-ready components in minutes.</p>
+    <div class="h2-btns">
+      <a href="#" class="h2-btn1">Get Started Free</a>
+      <a href="#" class="h2-btn2">See how it works →</a>
+    </div>
+  </div>
+  <div class="h2-right">🎨</div>
+</section>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume — Alex Morgan</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Segoe UI',system-ui,sans-serif;background:#f8f9ff;color:#1a1a2e;}
+    .resume-header{background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);padding:4rem 2rem;text-align:center;position:relative;overflow:hidden;}
+    .resume-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(108,99,255,.2),transparent 70%);}
+    .avatar{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,#6c63ff,#ff6584);display:flex;align-items:center;justify-content:center;font-size:2.5rem;margin:0 auto 1.5rem;border:4px solid rgba(255,255,255,.2);position:relative;z-index:1;}
+    .resume-header h1{font-size:2.2rem;font-weight:800;color:#fff;margin-bottom:.3rem;position:relative;z-index:1;}
+    .resume-header .title{color:rgba(255,255,255,.7);font-size:1rem;margin-bottom:1.5rem;position:relative;z-index:1;}
+    .contact-pills{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;position:relative;z-index:1;}
+    .pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);padding:.4rem 1rem;border-radius:50px;font-size:.8rem;display:flex;align-items:center;gap:.4rem;}
+    .main{max-width:900px;margin:0 auto;padding:3rem 1.5rem;display:grid;grid-template-columns:1fr 2fr;gap:3rem;}
+    .sidebar section{margin-bottom:2.5rem;}
+    .section-head{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#6c63ff;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid #ede9fe;}
+    .skill-tag{display:inline-block;background:#ede9fe;color:#6c63ff;font-size:.8rem;padding:.3rem .7rem;border-radius:6px;margin:.2rem;font-weight:600;}
+    .skill-tag.secondary{background:#fce7f3;color:#ec4899;}
+    .skill-tag.tertiary{background:#ecfdf5;color:#059669;}
+    .lang-item{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;}
+    .lang-name{font-size:.9rem;font-weight:600;}
+    .lang-bar{flex:1;height:6px;background:#e0e0e0;border-radius:3px;margin:0 .8rem;overflow:hidden;}
+    .lang-fill{height:100%;background:linear-gradient(90deg,#6c63ff,#8b5cf6);border-radius:3px;}
+    .lang-level{font-size:.75rem;color:#999;}
+    .edu-item{margin-bottom:1.2rem;}
+    .edu-degree{font-size:.9rem;font-weight:700;color:#1a1a2e;}
+    .edu-school{font-size:.82rem;color:#6c63ff;margin:.2rem 0;}
+    .edu-year{font-size:.78rem;color:#999;}
+    .timeline{position:relative;padding-left:2rem;}
+    .timeline::before{content:'';position:absolute;left:.6rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#6c63ff,#ff6584);}
+    .tl-item{position:relative;margin-bottom:2.5rem;}
+    .tl-dot{position:absolute;left:-1.7rem;top:.3rem;width:14px;height:14px;border-radius:50%;background:#6c63ff;border:3px solid #f8f9ff;box-shadow:0 0 0 2px #6c63ff;}
+    .tl-date{font-size:.75rem;font-weight:700;color:#6c63ff;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem;}
+    .tl-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:.2rem;}
+    .tl-company{font-size:.85rem;color:#888;margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem;}
+    .tl-badge{background:#ede9fe;color:#6c63ff;font-size:.7rem;padding:.15rem .5rem;border-radius:50px;font-weight:600;}
+    .tl-desc{font-size:.85rem;color:#555;line-height:1.6;}
+    .tl-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem;}
+    .tl-tag{background:#f5f5f5;color:#666;font-size:.72rem;padding:.2rem .5rem;border-radius:4px;}
+    @media(max-width:700px){.main{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div class="resume-header">
+  <div class="avatar">👨‍💻</div>
+  <h1>Alex Morgan</h1>
+  <div class="title">Senior Full Stack Developer</div>
+  <div class="contact-pills">
+    <span class="pill">📧 alex@email.com</span>
+    <span class="pill">📱 +1 555-123-4567</span>
+    <span class="pill">📍 San Francisco, CA</span>
+    <span class="pill">🔗 linkedin.com/in/alexmorgan</span>
+  </div>
+</div>
+
+<div class="main">
+  <aside class="sidebar">
+    <section>
+      <div class="section-head">Technical Skills</div>
+      <span class="skill-tag">JavaScript</span>
+      <span class="skill-tag">TypeScript</span>
+      <span class="skill-tag">React</span>
+      <span class="skill-tag">Node.js</span>
+      <span class="skill-tag secondary">Python</span>
+      <span class="skill-tag secondary">Django</span>
+      <span class="skill-tag tertiary">PostgreSQL</span>
+      <span class="skill-tag tertiary">MongoDB</span>
+      <span class="skill-tag">Docker</span>
+      <span class="skill-tag">AWS</span>
+      <span class="skill-tag secondary">Figma</span>
+      <span class="skill-tag">Git</span>
+    </section>
+
+    <section>
+      <div class="section-head">Languages</div>
+      <div class="lang-item"><span class="lang-name">English</span><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div><span class="lang-level">Native</span></div>
+      <div class="lang-item"><span class="lang-name">Spanish</span><div class="lang-bar"><div class="lang-fill" style="width:75%"></div></div><span class="lang-level">B2</span></div>
+      <div class="lang-item"><span class="lang-name">French</span><div class="lang-bar"><div class="lang-fill" style="width:40%"></div></div><span class="lang-level">A2</span></div>
+    </section>
+
+    <section>
+      <div class="section-head">Education</div>
+      <div class="edu-item">
+        <div class="edu-degree">B.Sc. Computer Science</div>
+        <div class="edu-school">Stanford University</div>
+        <div class="edu-year">2014 – 2018 · GPA 3.9</div>
+      </div>
+      <div class="edu-item">
+        <div class="edu-degree">AWS Solutions Architect</div>
+        <div class="edu-school">Amazon Web Services</div>
+        <div class="edu-year">2021 · Certified</div>
+      </div>
+    </section>
+  </aside>
+
+  <main>
+    <section style="margin-bottom:2.5rem;">
+      <div class="section-head">Work Experience</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Jan 2022 — Present</div>
+          <div class="tl-title">Senior Full Stack Developer</div>
+          <div class="tl-company">🏢 TechCorp Inc. <span class="tl-badge">Full-time</span></div>
+          <div class="tl-desc">Led development of microservices architecture serving 2M+ users. Reduced API response time by 60% through optimization. Mentored team of 5 junior developers.</div>
+          <div class="tl-tags"><span class="tl-tag">React</span><span class="tl-tag">Node.js</span><span class="tl-tag">AWS</span><span class="tl-tag">PostgreSQL</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#ff6584;box-shadow:0 0 0 2px #ff6584;"></div>
+          <div class="tl-date">Mar 2020 — Dec 2021</div>
+          <div class="tl-title">Full Stack Developer</div>
+          <div class="tl-company">🚀 StartupXYZ <span class="tl-badge" style="background:#fce7f3;color:#ec4899;">Startup</span></div>
+          <div class="tl-desc">Built and launched 3 SaaS products from scratch. Implemented CI/CD pipelines and automated testing. Increased test coverage from 20% to 85%.</div>
+          <div class="tl-tags"><span class="tl-tag">Vue.js</span><span class="tl-tag">Python</span><span class="tl-tag">Docker</span><span class="tl-tag">MongoDB</span></div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#43e97b;box-shadow:0 0 0 2px #43e97b;"></div>
+          <div class="tl-date">Jun 2018 — Feb 2020</div>
+          <div class="tl-title">Frontend Developer</div>
+          <div class="tl-company">💼 Digital Agency Co. <span class="tl-badge" style="background:#ecfdf5;color:#059669;">Agency</span></div>
+          <div class="tl-desc">Developed responsive web applications for 20+ clients. Specialized in performance optimization and accessibility compliance.</div>
+          <div class="tl-tags"><span class="tl-tag">HTML/CSS</span><span class="tl-tag">JavaScript</span><span class="tl-tag">WordPress</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
